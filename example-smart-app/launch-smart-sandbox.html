@@ -32,12 +32,12 @@
     <!-- Currently, the SMART App Launcher (https://launch.smarthealthit.org) does not check/validate the client_id field.
         If/when this changes, or when working with other authorization servers, please update the client_id field here. -->
     <script>
-      const client = FHIR.client("https://r3.smarthealthit.org");
-      client.request("Patient/2e27c71e-30c8-4ceb-8c1c-5641e066c0a4").then(console.log).catch(console.error);
+      // const client = FHIR.client("https://r3.smarthealthit.org");
+      // client.request("Patient/2e27c71e-30c8-4ceb-8c1c-5641e066c0a4").then(console.log).catch(console.error);
 
       FHIR.oauth2.authorize({
-        client_id: 'YOUR-SMART-HEALTH-IT-CLIENT-ID-HERE',
-        scope:  'patient/Patient.read patient/Observation.read launch online_access openid profile',
+        client_id: '0216c421-f27c-4a48-93ca-dbab30e796eb',
+        scope:  'patient/Patient.read patient/Observation.read launch online_access openid profile launch openid fhirUser patient/*.read',
         redirectUri: "index.html"
       });
     </script>
